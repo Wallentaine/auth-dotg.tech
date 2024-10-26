@@ -4,5 +4,11 @@
   "logstash": {
     "host": "127.0.0.1",
     "port": 5044
+  },
+  "redis": {
+    "username":"",
+    "password":"",
+    "host":"127.0.0.1",
+    "port":"6379"
   }
 }

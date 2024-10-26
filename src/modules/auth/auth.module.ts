@@ -1,12 +1,16 @@
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { AuthRepository } from './auth.repository';
+import { AuthRedisRepository } from './auth.repository';
 import { AuthController } from './auth.controller';
+import { redisConfig } from '@libs/redis';
 
 @Module({
+  imports: [
+    redisConfig,
+  ],
   providers: [
     AuthService, 
-    AuthRepository
+    AuthRedisRepository
   ],
   controllers: [ 
     AuthController

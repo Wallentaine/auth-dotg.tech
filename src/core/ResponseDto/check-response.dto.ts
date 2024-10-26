@@ -4,5 +4,5 @@ import { IsString } from "class-validator";
 export class CheckAuthResponseDto {
     @IsString()
     @Expose()
-    public sessionToken: string
+    public uid: string
 }

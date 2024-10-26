@@ -1,7 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { MessagePattern, Payload } from '@nestjs/microservices';
-import { AuthResponseDto, CheckAuthDto, CheckAuthResponseDto } from 'src/core';
+import { AuthResponseDto, CheckAuthDto } from 'src/core';
 
 @Controller()
 export class AuthController {
@@ -10,8 +10,8 @@ export class AuthController {
   ) {}
 
   @MessagePattern('auth.check')
-  public async authCheck(@Payload() { uid }: CheckAuthDto): Promise<CheckAuthResponseDto | null> {
-    return await this.authService.authCheck(uid);
+  public async authCheck(@Payload() { token }: CheckAuthDto): Promise<AuthResponseDto> {
+    return await this.authService.authCheck(token);
   }
 
   @MessagePattern('auth')

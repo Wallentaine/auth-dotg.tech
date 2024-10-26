@@ -6,9 +6,9 @@ import { LoggerModule } from 'nestjs-pino';
 
 @Module({
   imports: [
-    ConfigModule, 
+    ConfigModule,
     LoggerModule.forRootAsync(pinoDefaultConfig),
-    AuthModule
+    AuthModule,
   ],
 })
 export class AppModule {}

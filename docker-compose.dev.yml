@@ -1,0 +1,18 @@
+services:
+  dotg-auth:
+    container_name: dotg-auth
+    build:
+      context: .
+      dockerfile: ./docker/dev/Dockerfile
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ./:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - 5052:5052
+    networks:
+      - local_network
+
+networks:
+  local_network:

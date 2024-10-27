@@ -1,0 +1,11 @@
+services:
+  dotg-auth:
+    container_name: dotg-auth
+    build:
+      context: .
+      dockerfile: ./docker/prod/Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 5052:5052
+    restart: on-failure

@@ -10,7 +10,7 @@ async function bootstrap() {
     AppModule,
     {
       options: {
-        host: 'localhost',
+        host: '0.0.0.0',
         port: 5052,
       },
       transport: Transport.TCP,
